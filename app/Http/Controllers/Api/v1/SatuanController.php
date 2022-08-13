@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\v1\SatuanResource;
+use App\Models\Satuan;
 use Illuminate\Http\Request;
 
 class SatuanController extends Controller
@@ -14,7 +16,8 @@ class SatuanController extends Controller
      */
     public function index()
     {
-        //
+        $data = Satuan::all();
+        return SatuanResource::collection($data);
     }
 
     /**
