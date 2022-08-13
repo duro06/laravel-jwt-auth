@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AutogeneratorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::view("login","login");
+Route::view("login", "login");
+Route::get('autogen', [AutogeneratorController::class, 'index']);
