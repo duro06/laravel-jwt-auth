@@ -13,7 +13,12 @@ class TabelSatuan extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('satuan', function (Blueprint $table) {
+            $table->id();
+            $table->uuid('uuid')->unique();
+            $table->string('name')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class TabelSatuan extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('satuan');
     }
 }
